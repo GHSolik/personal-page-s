@@ -544,6 +544,22 @@ footer {
     background-color: var(--header-color);
 }
 
+/* ===== Появление разделов при прокрутке ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* ===== Адаптивность ===== */
 @media (max-width: 600px) {
@@ -657,5 +673,11 @@ footer {
     .story-dialog[open].closing,
     .story-dialog[open].closing::backdrop {
         animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

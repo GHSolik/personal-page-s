@@ -108,3 +108,28 @@ storyDialog.addEventListener("animationend", function (event) {
 storyDialog.addEventListener("close", function () {
     storyDialog.classList.remove("closing");
 });
+
+// ===== Появление элементов при прокрутке =====
+
+const revealElements = document.querySelectorAll(
+    ".about-section, #interests, #stories"
+);
+
+const revealObserver = new IntersectionObserver(
+    function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+revealElements.forEach(function (element) {
+    element.classList.add("reveal");
+    revealObserver.observe(element);
+});
