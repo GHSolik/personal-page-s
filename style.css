@@ -700,6 +700,64 @@ footer {
     white-space: nowrap;
 }
 
+/* ===== Поиск числа в π ===== */
+
+.pi-search {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--accent-color);
+}
+
+.pi-search h3 {
+    font-size: 22px;
+}
+
+.pi-search p {
+    color: var(--secondary-text);
+}
+
+.pi-search-controls label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pi-search-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#pi-search-input {
+    flex: 1;
+    min-width: 160px;
+    padding: 11px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: inherit;
+}
+
+#pi-search-button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pi-search-button:hover {
+    opacity: 0.85;
+}
+
+#pi-search-result {
+    margin-top: 18px;
+}
+
 
 /* ===== Адаптивность ===== */
 @media (max-width: 600px) {

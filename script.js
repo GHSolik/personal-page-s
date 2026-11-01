@@ -326,3 +326,74 @@ piDownloadButton.addEventListener("click", function () {
     link.click();
     link.remove();
 });
+
+
+ // ===== Поиск любимого числа в π =====
+
+const piSearchInput = document.getElementById("pi-search-input");
+const piSearchButton = document.getElementById("pi-search-button");
+const piSearchResult = document.getElementById("pi-search-result");
+
+function searchInPi() {
+    const query = piSearchInput.value.trim();
+    // Проверка на пустое поле
+    if (query.length === 0) {
+        piSearchResult.textContent =
+            "Сначала введи число, которое хочешь найти в π.";
+        return;
+    }
+
+    // Проверяем, что введены только цифры
+    if (!/^\d+$/.test(query)) {
+        piSearchResult.textContent =
+            "Введи последовательность, состоящую только из цифр.";
+        return;
+    }
+
+    // Проверяем, загрузились ли цифры числа π
+    if (piDigits.length === 0) {
+        piSearchResult.textContent =
+            "Цифры π ещё не загрузились.";
+        return;
+    }
+
+    let matches = 0;
+    let firstPosition = -1;
+    let position = piDigits.indexOf(query);
+
+    // Ищем все совпадения
+    while (position !== -1) {
+        if (firstPosition === -1) {
+            firstPosition = position + 1;
+        }
+
+        matches++;
+
+        // Начинаем со следующей позиции,
+        // чтобы учитывать пересекающиеся совпадения
+        position = piDigits.indexOf(query, position + 1);
+    }
+
+    if (matches === 0) {
+        piSearchResult.textContent =
+            "Последовательность «" + query +
+            "» не найдена среди первых " +
+            piDigits.length + " цифр π после запятой.";
+    } else {
+        piSearchResult.textContent =
+            "Найдено совпадений: " + matches +
+            ". Первое начинается с позиции " +
+            firstPosition + " после запятой.";
+    }
+}
+
+// Поиск по кнопке
+piSearchButton.addEventListener("click", searchInPi);
+
+// Поиск по Enter
+piSearchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchInPi();
+    }
+});

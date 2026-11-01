@@ -246,7 +246,7 @@
                         id="pi-count"
                         type="number"
                         min="10"
-                        max="1000"
+                        max="10000"
                         value="200"
                     >
                 </label>
@@ -286,6 +286,36 @@
                 </p>
 
                 <div id="pi-statistics-chart"></div>
+            </div>
+            <!-- ===== Поиск числа в π ===== -->
+            <div class="pi-search">
+                <h3>Найди своё любимое число в π</h3>
+
+                <p>
+                    Введи последовательность цифр и узнай,
+                    встречается ли она среди первых знаков числа π.
+                </p>
+
+                <div class="pi-search-controls">
+                    <label for="pi-search-input">Искомое число</label>
+
+                    <div class="pi-search-actions">
+                        <input
+                            id="pi-search-input"
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="20"
+                            placeholder="Например, 2026"
+                            autocomplete="off"
+                        >
+
+                        <button id="pi-search-button" type="button">
+                            Найти
+                        </button>
+                    </div>
+                </div>
+
+                <p id="pi-search-result" role="status"></p>
             </div>
 
         </section>
