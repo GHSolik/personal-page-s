@@ -560,6 +560,146 @@ footer {
     transform: translateY(0);
 }
 
+/* ===== Лаборатория числа π ===== */
+
+.pi-intro {
+    color: var(--secondary-text);
+}
+
+.pi-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.pi-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.pi-controls input {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font: inherit;
+}
+
+#pi-generate,
+#pi-download {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pi-generate:hover {
+    opacity: 0.85;
+}
+
+/* ===== Сохранение изображения π ===== */
+
+#pi-download {
+    display: block;
+    margin-top: 18px;
+}
+
+#pi-download:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+#pi-download:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#pi-status {
+    color: var(--secondary-text);
+}
+
+.pi-canvas-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+#pi-canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Статистика цифр π ===== */
+
+.pi-statistics {
+    margin-top: 35px;
+}
+
+.pi-statistics h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.pi-statistics-description {
+    margin-bottom: 25px;
+    color: var(--secondary-text);
+}
+
+#pi-statistics-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pi-stat-row {
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr) 115px;
+    align-items: center;
+    gap: 12px;
+}
+
+.pi-stat-digit {
+    font-weight: bold;
+    text-align: center;
+}
+
+.pi-stat-bar-background {
+    height: 18px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
+}
+
+.pi-stat-bar {
+    height: 100%;
+    border-radius: 5px;
+
+    outline: 1px solid var(--text-color);
+    outline-offset: -1px;
+
+    transition: width 0.3s ease;
+}
+
+.pi-stat-value {
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+}
+
 
 /* ===== Адаптивность ===== */
 @media (max-width: 600px) {

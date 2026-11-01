@@ -230,6 +230,65 @@
         </section>
 
 
+        <!-- ===== Лаборатория числа π ===== -->
+        <section id="pi-lab">
+            <h2>Лаборатория числа π</h2>
+
+            <p class="pi-intro">
+            Каждая цифра числа π представлена своим цветом.
+            Выбери параметры и построй собственный цветной ковёр!
+            </p>
+
+            <div class="pi-controls">
+                <label>
+                    Количество цифр
+                    <input
+                        id="pi-count"
+                        type="number"
+                        min="10"
+                        max="1000"
+                        value="200"
+                    >
+                </label>
+
+                <label>
+                    Квадратов в строке
+                    <input
+                        id="pi-columns"
+                        type="number"
+                        min="5"
+                        max="50"
+                        value="20"
+                    >
+                </label>
+
+                <button id="pi-generate" type="button">
+                    Построить
+                </button>
+            </div>
+
+            <p id="pi-status" role="status"></p>
+
+            <div class="pi-canvas-wrapper">
+                <canvas id="pi-canvas"></canvas>
+            </div>
+            <button id="pi-download" type="button" disabled>
+                Скачать изображение (PNG)
+            </button>
+
+            <!-- ===== Статистика цифр π ===== -->
+            <div class="pi-statistics">
+                <h3>Статистика цифр</h3>
+
+                <p class="pi-statistics-description">
+                    Частота появления каждой цифры
+                    в выбранном фрагменте числа π.
+                </p>
+
+                <div id="pi-statistics-chart"></div>
+            </div>
+
+        </section>
         <section id="stories">
             <h2>Истории</h2>
 
